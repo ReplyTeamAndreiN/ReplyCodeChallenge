@@ -7,8 +7,11 @@ import java.util.List;
 
 public class SnakeBastionsReader {
     public static void main(String[] args) throws IOException {
+        Problem p = SnakeBastionsReader.readProblemFromFile("00-example.txt");
+        System.out.println(p);
 
-        System.out.println(SnakeBastionsReader.readProblemFromFile("00-example.txt"));
+
+        Utils.checkSnake(p, 1, 1,3);
     }
     public static Problem readProblemFromFile(String fileName) throws IOException {
         Path path = Paths.get("src/main/resources/" + fileName);
@@ -43,6 +46,7 @@ public class SnakeBastionsReader {
             }
 
         }
+        p.result = new String[p.numberOfSnakes];
         return p;
     }
 }
