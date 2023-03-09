@@ -8,6 +8,9 @@ public class Problem {
     int[] snakesLenght;
     int[][] matrix;
 
+    String[] result;
+    long score;
+
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
