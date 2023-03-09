@@ -68,7 +68,7 @@ public class Utils {
 //        System.out.println(score);
 //        System.out.println(p.result[snakeIdx]);
 
-        if(crtLen!=snakeLenght){
+        if(crtLen!=(snakeLenght+1)){
 //            System.out.println("no sol");
         }else{
             if(score>0){

@@ -16,7 +16,7 @@ public class MainClass {
         String fileName4 = "04-input-low-points.txt";
         String fileName5 = "05-input-opposite-points-holes.txt";
 
-        String fileName = fileName0;
+        String fileName = fileName2;
 
         Problem p = SnakeBastionsReader.readProblemFromFile(fileName);
 

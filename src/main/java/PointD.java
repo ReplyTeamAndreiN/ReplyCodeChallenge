@@ -31,6 +31,6 @@ public class PointD implements Comparable<PointD>{
 
     @Override
     public int compareTo(PointD o) {
-        return this.score-o.score;
+        return o.score-this.score;
     }
 }
