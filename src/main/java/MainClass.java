@@ -1,4 +1,7 @@
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -6,14 +9,18 @@ import java.util.List;
 public class MainClass {
 
     public static void main(String[]args) throws IOException {
-       // Problem p = SnakeBastionsReader.readProblemFromFile("00-example.txt");
+        String fileName0 = "00-example.txt";
+        String fileName1 = "01-chilling-cat.txt";
+        String fileName2 = "02-swarming-ant.txt";
+        String fileName3 = "03-input-anti-greedy.txt";
+        String fileName4 = "04-input-low-points.txt";
+        String fileName5 = "05-input-opposite-points-holes.txt";
 
-        //Problem p = SnakeBastionsReader.readProblemFromFile("01-chilling-cat.txt");
-        //Problem p = SnakeBastionsReader.readProblemFromFile("02-swarming-ant.txt");
-       Problem p = SnakeBastionsReader.readProblemFromFile("03-input-anti-greedy.txt");
-       // Problem p = SnakeBastionsReader.readProblemFromFile("04-input-low-points.txt");
-        // Problem p = SnakeBastionsReader.readProblemFromFile("05-input-opposite-points-holes.txt");
-        System.out.println(p);
+        String fileName = fileName0;
+
+        Problem p = SnakeBastionsReader.readProblemFromFile(fileName);
+
+        //System.out.println(p);
 
         int crtSnake = 0;
         while(crtSnake<p.numberOfSnakes){
@@ -48,12 +55,20 @@ public class MainClass {
 
         }
 
-        for(String ss:p.result){
-            System.out.println(ss);
-        }
+
         System.out.println("==========  "+p.score);
 
+        writeToFile(fileName, p);
 
+    }
+
+    private static void writeToFile(String fileName, Problem p) throws IOException {
+        StringBuilder str = new StringBuilder();
+        for(String s:p.result){
+            str.append(s).append(System.lineSeparator());
+        }
+        Path path = Paths.get("src/main/resources/sol"+"_"+fileName);
+        Files.write(path, str.toString().getBytes());
 
     }
 }
