@@ -29,7 +29,7 @@ public class Utils {
 
 
         int crtLen = 1;
-        while(crtLen<snakeLenght){
+        while(crtLen<=snakeLenght){
 
             List<PointD> points = new ArrayList<>();
             points.add(new PointD(x,y+1,p.rows, p.columns, "R", m));
