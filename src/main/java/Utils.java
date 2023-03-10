@@ -29,7 +29,7 @@ public class Utils {
 
 
         int crtLen = 1;
-        while(crtLen<=snakeLenght){
+        while(crtLen<snakeLenght){
 
             List<PointD> points = new ArrayList<>();
             points.add(new PointD(x,y+1,p.rows, p.columns, "R", m));
@@ -68,7 +68,7 @@ public class Utils {
 //        System.out.println(score);
 //        System.out.println(p.result[snakeIdx]);
 
-        if(crtLen!=(snakeLenght+1)){
+        if(crtLen!=snakeLenght){
 //            System.out.println("no sol");
         }else{
             if(score>0){
