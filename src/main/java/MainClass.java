@@ -16,9 +16,11 @@ public class MainClass {
         String fileName4 = "04-input-low-points.txt";
         String fileName5 = "05-input-opposite-points-holes.txt";
 
-        String fileName = fileName0;
+        String fileName = fileName2;
 
         Problem p = SnakeBastionsReader.readProblemFromFile(fileName);
+
+        long time = System.currentTimeMillis();
 
         //System.out.println(p);
 
@@ -55,19 +57,19 @@ public class MainClass {
 
         }
 
+        time = (System.currentTimeMillis() - time)/1000;
+        System.out.println("==========  "+p.score + " in seconds - "+time);
 
-        System.out.println("==========  "+p.score);
-
-        writeToFile(fileName, p);
+        writeToFile(fileName, p, time);
 
     }
 
-    private static void writeToFile(String fileName, Problem p) throws IOException {
+    private static void writeToFile(String fileName, Problem p, long time) throws IOException {
         StringBuilder str = new StringBuilder();
         for(String s:p.result){
             str.append(s).append(System.lineSeparator());
         }
-        Path path = Paths.get("src/main/resources/sol"+"_"+fileName);
+        Path path = Paths.get("src/main/resources/sol"+"_"+fileName+"_"+p.score+"_"+time);
         Files.write(path, str.toString().getBytes());
 
     }

@@ -20,8 +20,9 @@ public class Utils {
 
         List<String> snakeLine = new ArrayList<>();
         long score = 0L + m[x][y];
-        snakeLine.add(Integer.toString(x));
+        //inverse sistem!?!?! first y and x - this is the way the output should look
         snakeLine.add(Integer.toString(y));
+        snakeLine.add(Integer.toString(x));
         m[x][y] = Integer.MIN_VALUE;
 
         int nextx =0;
